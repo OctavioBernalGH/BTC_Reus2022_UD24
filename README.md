@@ -1,3 +1,26 @@
+<table>
+ <tr>
+    <td width="100px"><img src="https://github.com/OctavioBernalGH/BTC_Reus2022_UD16/blob/main/dou_logo.png" alt="Team DOU"/></td>
+  <td width="1000px"> <h2> Spring Manual Unidad 24 </h2> </td>
+  
+ </tr>
+</table>
+ 
+ [comment]: <> (### Ejercicios SQL Unidad UD16<hr>)
+
+[![Java](https://img.shields.io/badge/Java-FrontEnd-informational)]()
+[![JBuilder](https://img.shields.io/badge/JBuilder-View-critical)]()
+[![JUnit 5](https://img.shields.io/badge/JUnit%205-Testing-success)]()
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-lightgrey)]()
+[![SQL](https://img.shields.io/badge/SQL-DataBase-yellowgreen)]()
+[![Maven](https://img.shields.io/badge/Maven-ProjectStructure-blueviolet)]()
+
+Este ejercicio ha sido realizado por los miembros del equipo 1. Dicho equipo esta formado por:
+
+  [- J.Oriol López Bosch](https://github.com/mednologic)<br>
+  [- Octavio Bernal](https://github.com/OctavioBernalGH)<br>
+  [- David Dalmau](https://github.com/DavidDalmauDieguez)
+
 1. Crear proyecto Spring con Maven, para ello hay que ir a "New -- Spring Starter Project...".
 
 <p align="center">
