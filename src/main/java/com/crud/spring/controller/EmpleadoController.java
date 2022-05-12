@@ -2,6 +2,7 @@ package com.crud.spring.controller;
 
 import java.util.List;
 /** Se importa el sistema de anotaciones */
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,7 +33,7 @@ public class EmpleadoController {
 	 * @return
 	 */
 
-	@GetMapping("/empleados")
+	@GetMapping("/empleado")
 	public List<Empleado> listarEmpleados() {
 		return empleadoServiceImpl.listarEmpleados();
 	}
@@ -45,7 +46,7 @@ public class EmpleadoController {
 	 * @param nombre
 	 * @return
 	 */
-	@GetMapping("/empleados/nombre/{nombre}")
+	@GetMapping("/empleado/nombre/{nombre}")
 	public List<Empleado> listarEmpleadoNombre(@PathVariable(name = "nombre") String nombre) {
 		return empleadoServiceImpl.listarEmpleadoNombre(nombre);
 	}
@@ -57,7 +58,7 @@ public class EmpleadoController {
 	 * @param empleado
 	 * @return
 	 */
-	@PostMapping("/empleados")
+	@PostMapping("/empleado")
 	public Empleado guardarEmpleado(@RequestBody Empleado empleado) {
 		return empleadoServiceImpl.guardarEmpleado(empleado);
 	}
@@ -131,5 +132,19 @@ public class EmpleadoController {
 	@DeleteMapping("/empleado/{id}")
 	public void eliminarEmpleado(@PathVariable(name = "id") Long id) {
 		empleadoServiceImpl.eliminarEmpleado(id);
+	}
+
+	/**
+	 * Mediante la anotación @GetMapping podemos buscar un empleado mediante el
+	 * trabajo que tiene, para ello se escribirá la dirección
+	 * /localhost:port/api/empleado/trabajo/{trabajo a filtrar} en Postman y nos
+	 * devolverá el resultado filtrando por trabajo.
+	 * 
+	 * @param trabajo
+	 * @return
+	 */
+	@GetMapping("/empleado/trabajo/{trabajo}")
+	public Empleado buscarEmpleadoTrabajo(@PathVariable(name = "trabajo") String trabajo) {
+		return empleadoServiceImpl.buscarEmpleadoTrabajo(trabajo);
 	}
 }

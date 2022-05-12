@@ -19,7 +19,7 @@ public class Empleado {
 	@Column(name = "trabajo")
 	private String trabajo;
 	@Column(name = "salario")
-	private double salario;
+	private int salario;
 	@Column(name = "dni")
 	private int dni;
 
@@ -36,7 +36,7 @@ public class Empleado {
 	 * @param salario
 	 * @param dni
 	 */
-	public Empleado(Long id, String nombre, String trabajo, double salario, int dni) {
+	public Empleado(Long id, String nombre, String trabajo, int salario, int dni) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -70,11 +70,11 @@ public class Empleado {
 		this.trabajo = trabajo;
 	}
 
-	public double getSalario() {
+	public int getSalario() {
 		return salario;
 	}
 
-	public void setSalario(double salario) {
+	public void setSalario(int salario) {
 		this.salario = salario;
 	}
 
