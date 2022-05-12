@@ -165,3 +165,78 @@ A continuación, se mapean los siguientes métodos:
 
 ![image](https://user-images.githubusercontent.com/103035621/168127241-2c74bd9e-85ab-4fa8-af04-d1d57036d573.png)
 
+- Método buscarEmpleadoId() con la ruta GET localhost:puerto/empleado/{id} se obtendrá como resultado la búsqueda de un empleado mediante el identificador de este, solo hay que sustituir {id} por una identificación en la dirección de la API.
+
+![image](https://user-images.githubusercontent.com/103035621/168127643-a7484723-c19c-46d5-8b13-96283d830c91.png)
+
+- Método eliminarEmpleado() con la ruta DELETE localhost/empleado/{id} se eliminará un empleado de la base de datos, para ello hay que substituir el {id} por un identificador de empleado.
+
+![image](https://user-images.githubusercontent.com/103035621/168127690-a9937355-a61c-47f2-b5f7-4c6f90c95d6b.png)
+
+- Método actualizarEmpleado() es el método más largo de todos puesto que en la dirección PUT localhost/api/empleado/{id} se introducirá la ID del usuario a modificar y luego en el body de la petición habrá que introducir los demás datos del empleado.
+
+![image](https://user-images.githubusercontent.com/103035621/168127758-18ceb097-d00d-459a-9ec9-b5ccbba8dcdd.png)
+
+11. A continuación se crea un script de datos SQL el cuál contendrá la creación de la tabla en cuestión con diferentes insert para verificar su correcto funcionamiento.
+
+![image](https://user-images.githubusercontent.com/103035621/168127811-13b2b715-66d9-4b5e-a925-fc99db8f7e99.png)
+
+12. Para comprobar funcionamiento ejecutamos el proyecto mediante Spring.
+
+![image](https://user-images.githubusercontent.com/103035621/168127900-17636120-d7a3-4c2e-880a-ee8e95ff0d4d.png)
+
+Una vez arrancado el servicio debería aparecer una ventana con el siguiente contenido:
+
+![image](https://user-images.githubusercontent.com/103035621/168127975-ab150cbb-ea7a-4fd8-85fb-35720d808c2c.png)
+
+13. Una vez esté el servicio iniciado, se comprobará el funcionamiento de la API. Para ello se utiliza la herramienta Postman. Una vez esté instalada se deberá introducir las diferentes direcciones de la API con los parámetros necesarios para su funcionamiento. El siguiente ejemplo de verificación es utilizar el método HTTP GET con la dirección /localhost:puerto/empleado y mostrará una lista de todos los empleados, corresponde a la función listarEmpleados().
+
+![image](https://user-images.githubusercontent.com/103035621/168128071-60f9c704-65da-4c37-82ac-7255116117a9.png)
+
+La siguiente verificación sería la búsqueda de usuario mediante ID. Para ello se utiliza el método HTTP GET con la dirección de la API localhost:puerto/api/empleado/1. Y el resultado será el siguiente:
+
+![image](https://user-images.githubusercontent.com/103035621/168128117-1cbef2cf-f8f7-478b-a116-604d526b8801.png)
+
+La siguiente verificación de funcionamiento de la API será mediante el método HTTP GET obtener un empleado buscándolo por su nombre. Para ello utilizaremos la dirección localhost:puerto/api/empleado/nombre/Mariana.
+
+![image](https://user-images.githubusercontent.com/103035621/168128171-4753a477-dd56-46da-970e-dab3ffae5ddb.png)
+
+La siguiente validación de la API será la de actualizar un empleado, para ello habrá que realizar la sentencia mediante el método POST acompañado de la URL localhost:puerto/api/empleado/1 indicando al final del link el identificador del usuario a modificar.
+
+Una vez esté introducida la sentencia, hay que seleccionar el Body, cambiar a tipo raw y lenguaje JSON. Se deberá introducir los nuevos valores en formato JSON y apretar el botón send. El resultado debería ser el siguiente:
+
+![image](https://user-images.githubusercontent.com/103035621/168128218-bc2b10cb-cd41-4926-a3ee-dbbf4e538cd0.png)
+
+Lo siguiente a probar será crear un nuevo empleado, para ello se utilizará la sentencia HTTP POST con la dirección localhost:puerto/api/empleado" y introduciendo los valores en el body de la misma forma que el método anterior. El resultado sería el siguiente:
+
+![image](https://user-images.githubusercontent.com/103035621/168128270-819d3159-0862-48a8-9bc9-0f873a1eb4fa.png)
+
+Como se puede observar en la parte de abajo se ha creado un nuevo empleado y el sistema le ha dado un ID auto incremental . Ahora lo siguiente será probar borrar un empleado para ello se utilizará la sentencia HTTP DELETE con la dirección localhost/puerto/api/empleado/1 indicando por último lugar el identificador del empleado a eliminar. Se ejecuta la sentencia.
+
+![image](https://user-images.githubusercontent.com/103035621/168128331-c2a22418-a5c7-4d8e-93d2-1a3e6494e728.png)
+
+Se comprueba que se haya eliminado de forma adecuada el empleado número 1, para ello se imprime el listado de empleados, están ordenados por ID. En la siguiente imagen se observa que el empleado con identificador 1 ha sido eliminado del sistema.
+
+![image](https://user-images.githubusercontent.com/103035621/168128382-e59b84b2-0f05-4834-826f-ccd2082c493d.png)
+
+A continuación, se pide crear una función que busque empleados por trabajo. Para ello se genera el siguiente código en la interfaz del DAO.
+
+![image](https://user-images.githubusercontent.com/103035621/168128428-3c1d6754-558c-45e7-8c38-c43f4bd4af1b.png)
+
+Se añade la siguiente línea en la interfaz de la capa Service:
+
+![image](https://user-images.githubusercontent.com/103035621/168128464-873b3211-94cc-46a3-b4ef-203cf70c4c5c.png)
+
+Como se ha añadido una nueva función a la interfaz de la capa Service, hay que implementarla en la clase "EmpleadoServiceImpl.Java" para ello se añade la definición y cuerpo de la función de filtrado por trabajo.
+
+![image](https://user-images.githubusercontent.com/103035621/168128514-35f7f0d2-ec54-41ae-b5b8-ea282fe5b864.png)
+
+Por último y antes de la comprobación, falta añadir la función al controlador de la API (EmpleadoController), añadimos la función, introducimos un comentario de guía para futuras ocasiones y ya estaría lista la API.
+
+![image](https://user-images.githubusercontent.com/103035621/168128604-9f7219cb-d2a6-4885-978b-8379195ed15b.png)
+
+Por último, abrimos Postman, insertamos la sentencia HTTP GET "localhost:puerto/api/empleado/trabajo/*" y donde el * buscamos un trabajo, ejecutamos la sentencia y el resultado debería ser el siguiente:
+
+![image](https://user-images.githubusercontent.com/103035621/168128676-71d82355-4bef-46bc-b0a5-1868f6d18575.png)
+
+
