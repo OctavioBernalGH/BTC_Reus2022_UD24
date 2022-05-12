@@ -1,17 +1,28 @@
 1. Crear proyecto Spring con Maven, para ello hay que ir a "New -- Spring Starter Project...".
 
-![image](https://user-images.githubusercontent.com/103035621/168125588-33cfc683-0504-4838-a3fa-16451f942e9a.png)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/103035621/168125588-33cfc683-0504-4838-a3fa-16451f942e9a.png" alt="Imagen1"/>
+</p>
 
-A continuación, se rellenan los siguientes campos teniendo en cuenta la versión de java con la que se trabajará, el tipo de packaging en proyectos con api con despliegue en servidor de aplicaciones será del tipo war. Se define también un group y un artifact de estructura de proyecto, se prosigue pulsando next y proseguirá el siguiente menú de configuración.
+<p align="justify">A continuación, se rellenan los siguientes campos teniendo en cuenta la versión de java con la que se trabajará, el tipo de packaging en proyectos con api con despliegue en servidor de aplicaciones será del tipo war. Se define también un group y un artifact de estructura de proyecto, se prosigue pulsando next y proseguirá el siguiente menú de configuración.</p>
 
-![image](https://user-images.githubusercontent.com/103035621/168125697-2d56ce5e-7e94-47a8-8254-2294c715248d.png)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/103035621/168125697-2d56ce5e-7e94-47a8-8254-2294c715248d.png" alt="Imagen2"/>
+</p>
 
-Una vez presionado el botón next, se deberán marcar las tecnologías a utilizar, en el caso de este ejemplo serán "Spring Boot Dev Tools", "Spring Data JPA", "H2 Database" y "Spring Web". Una vez marcados se pulsará finalizar y se creará la estructura de proyecto con Maven y Spring.
+<p align="justify">Una vez presionado el botón next, se deberán marcar las tecnologías a utilizar, en el caso de este ejemplo serán "Spring Boot Dev Tools", "Spring Data JPA", "H2 Database" y "Spring Web". Una vez marcados se pulsará finalizar y se creará la estructura de proyecto con Maven y Spring.</p>
 
-![image](https://user-images.githubusercontent.com/103035621/168125858-0da1207d-9077-47d0-bede-e84c74e8f16d.png)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/103035621/168125858-0da1207d-9077-47d0-bede-e84c74e8f16d.png" alt="Imagen2"/>
+</p>
 
-2. Modificar el POM.xml, se ha de verificar que los elementos marcados durante la configuración de proyecto estén incluidos en el POM. En el siguiente cuadro está la base POM generada y necesaria.
+<p align="justify">2. Modificar el POM.xml, se ha de verificar que los elementos marcados durante la configuración de proyecto estén incluidos en el POM. En el siguiente cuadro está la base POM generada y necesaria.</p>
 
+<details>
+	
+<summary>Código del fichero POM.XML</summary>
+<br>
+	
 ```xml
 
 <?xml version="1.0" encoding="UTF-8"?>
@@ -84,17 +95,22 @@ Una vez presionado el botón next, se deberán marcar las tecnologías a utiliza
 </project>
 
 ``` 
+</details>
 
-3. Crear paquetes de la estructura de proyecto. La estructura básica estará definida en 4 paquetes principales que almacenarán las diferentes clases e interfaces de proyecto:
-	- PKG Controller.
-	- PKG DAO.
-	- PKG DTO.
-	- PKG Service.
+<p align="justify">3. Crear paquetes de la estructura de proyecto. La estructura básica estará definida en 4 paquetes principales que almacenarán las diferentes clases e interfaces de proyecto:</p>
+	⋅⋅* PKG Controller.<br>
+	⋅⋅* PKG DAO.<br>
+	⋅⋅* PKG DTO.<br>
+	⋅⋅* PKG Service.<br>
+	<br>
 
-![image](https://user-images.githubusercontent.com/103035621/168126258-6ed8eb5b-7cd1-4cfb-b663-e1314e3a168d.png)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/103035621/168126258-6ed8eb5b-7cd1-4cfb-b663-e1314e3a168d.png" alt="Imagen2"/>
+</p>
 
-Se deberán crear tantas clases como sea necesario para desarrollar la aplicación deseada. Esta estructura es apta para api con una sola tabla. En esta estructura de proyecto se puede observar los paquetes creados, las clases creadas y las interfaces creadas.
-También está el fichero POM de configuración de proyecto, el fichero application.propierties  que hace referencia al servidor de BBDD y el data.sql donde están las sentencias de BBDD, en este caso está el código de creación de una tabla con sus columnas y varios inserts en la BBDD para comprobar su correcto funcionamiento.
+
+
+<p align="justify">Se deberán crear tantas clases como sea necesario para desarrollar la aplicación deseada. Esta estructura es apta para api con una sola tabla. En esta estructura de proyecto se puede observar los paquetes creados, las clases creadas y las interfaces creadas. También está el fichero POM de configuración de proyecto, el fichero application.propierties  que hace referencia al servidor de BBDD y el data.sql donde están las sentencias de BBDD, en este caso está el código de creación de una tabla con sus columnas y varios inserts en la BBDD para comprobar su correcto funcionamiento.</p>
 
 5. Editar el application.propierties.
 	* Cambiar puerto mediante la sentencia "server.port= xxxx."
