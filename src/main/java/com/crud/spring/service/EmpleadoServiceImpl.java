@@ -2,9 +2,12 @@ package com.crud.spring.service;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.crud.spring.dao.IEmpleadoDAO;
 import com.crud.spring.dto.Empleado;
 
+@Service
 public class EmpleadoServiceImpl implements IEmpleadoService{
 
 	@Autowired
@@ -22,9 +25,15 @@ public class EmpleadoServiceImpl implements IEmpleadoService{
 	}
 
 	@Override
-	public Empleado buscarEmpleadoId(long id) {
+	public Empleado buscarEmpleadoId(Long id) {
 		// Devuelve un empleado buscando por ID.
 		return iEmpleadoDAO.findById(id).get();
+	}
+	
+	@Override
+	public Empleado buscarEmpleadoTrabajo(String trabajo) {
+		// Devuelve un empleado buscando por trabajo.
+		return iEmpleadoDAO.findByTrabajo(trabajo);
 	}
 
 	@Override
@@ -40,7 +49,7 @@ public class EmpleadoServiceImpl implements IEmpleadoService{
 	}
 
 	@Override
-	public void eliminarEmpleado(long id) {
+	public void eliminarEmpleado(Long id) {
 		// Eliminar empleado buscando por ID.
 		iEmpleadoDAO.deleteById(id);
 	}
