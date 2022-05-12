@@ -98,50 +98,57 @@
 </details>
 
 <p align="justify">3. Crear paquetes de la estructura de proyecto. La estructura básica estará definida en 4 paquetes principales que almacenarán las diferentes clases e interfaces de proyecto:</p>
-	⋅⋅* PKG Controller.<br>
-	⋅⋅* PKG DAO.<br>
-	⋅⋅* PKG DTO.<br>
-	⋅⋅* PKG Service.<br>
+	* PKG Controller.<br>
+	* PKG DAO.<br>
+	* PKG DTO.<br>
+	* PKG Service.<br>
 	<br>
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/103035621/168126258-6ed8eb5b-7cd1-4cfb-b663-e1314e3a168d.png" alt="Imagen2"/>
 </p>
 
-
-
 <p align="justify">Se deberán crear tantas clases como sea necesario para desarrollar la aplicación deseada. Esta estructura es apta para api con una sola tabla. En esta estructura de proyecto se puede observar los paquetes creados, las clases creadas y las interfaces creadas. También está el fichero POM de configuración de proyecto, el fichero application.propierties  que hace referencia al servidor de BBDD y el data.sql donde están las sentencias de BBDD, en este caso está el código de creación de una tabla con sus columnas y varios inserts en la BBDD para comprobar su correcto funcionamiento.</p>
 
-5. Editar el application.propierties.
-	* Cambiar puerto mediante la sentencia "server.port= xxxx."
-	* Habilitar consola h2 mediante la sentencia "spring.h2.console.enable=true".
-	* Cambiar ruta de consola h2 mediante la sentencia "spring.h2.console.path="/database".
+<p align="justify">5. Editar el application.propierties.</p>
+	* Cambiar puerto mediante la sentencia "server.port= xxxx."<br>
+	* Habilitar consola h2 mediante la sentencia "spring.h2.console.enable=true".<br>
+	* Cambiar ruta de consola h2 mediante la sentencia "spring.h2.console.path="/database".<br>
+<br>
 
-![image](https://user-images.githubusercontent.com/103035621/168126353-32670b29-2781-4c0f-994f-2a91dcef00aa.png)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/103035621/168126353-32670b29-2781-4c0f-994f-2a91dcef00aa.png" alt="Imagen2"/>
+</p>
 
+<p align="justify">6. A continuación se programará en la "dto_branch" el código referente a la clase "Empleado.Java". La clase Empleado del paquete DTO tiene la función de mapear el objeto a la tabla de la BBDD. Un objeto del tipo Empleado hará referencia a una "tupla" en la tabla Empleado. 
+En esta clase se definen los atributos de clase que hacen referencia a las columnas de la tabla y se crean los diferentes constructores, en este caso 2, un constructor vacío y otro con todos los atributos de clase.</p>
 
-6. A continuación se programará en la "dto_branch" el código referente a la clase "Empleado.Java". La clase Empleado del paquete DTO tiene la función de mapear el objeto a la tabla de la BBDD. Un objeto del tipo Empleado hará referencia a una "tupla" en la tabla Empleado. 
-En esta clase se definen los atributos de clase que hacen referencia a las columnas de la tabla y se crean los diferentes constructores, en este caso 2, un constructor vacío y otro con todos los atributos de clase.
 En la siguiente imagen se pueden observar los import a las diferentes utilizades y clases y los atributos de clase referentes a la tabla.
 
-![image](https://user-images.githubusercontent.com/103035621/168126439-1438748b-60b9-4b56-93db-fa6affec146b.png)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/103035621/168126439-1438748b-60b9-4b56-93db-fa6affec146b.png" alt="Imagen2"/>
+</p>
 
 En la siguiente imagen se pueden observar los constructores de clase, uno vacío y otro con todos los atributos de la clase.
 
-![image](https://user-images.githubusercontent.com/103035621/168126500-e0621673-580b-4620-9c52-74ce31f9c879.png)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/103035621/168126500-e0621673-580b-4620-9c52-74ce31f9c879.png" alt="Imagen2"/>
+</p>
 
 Y por último se pueden observar los Getters y Setters de los atributos de clase.
 
-![image](https://user-images.githubusercontent.com/103035621/168126541-535b780d-2121-4528-be3d-b23d231b91e7.png)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/103035621/168126541-535b780d-2121-4528-be3d-b23d231b91e7.png" alt="Imagen2"/>
+</p>
 
-7. Se prosigue programando en la "dao_branch" el código referente a la interfaz de "EmpleadoDAO". Esta clase hace referencia al Data Access Object, también denominado DAO. 
+<p align="justify">7. Se prosigue programando en la "dao_branch" el código referente a la interfaz de "EmpleadoDAO". Esta clase hace referencia al Data Access Object, también denominado DAO. En esta interfaz se definen los métodos de acceso a datos de forma personalizada. En la siguiente imagen se puede ver una función que devuelve una lista de "Empleado" filtrando por nombre".</p>
 
-En esta interfaz se definen los métodos de acceso a datos de forma personalizada. En la siguiente imagen se puede ver una función que devuelve una lista de "Empleado" filtrando por nombre".
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/103035621/168126601-2907601d-08ce-4d9e-8e33-754317eff6b8.png" alt="Imagen2"/>
+</p>
 
-![image](https://user-images.githubusercontent.com/103035621/168126601-2907601d-08ce-4d9e-8e33-754317eff6b8.png)
-
-8. A continuación se definirán los métodos en la interfaz "IEmpleadoService" en la rama "service_interface_branch". 
-En esta interfaz se define la estructura de los métodos de acceso a datos CRUD, se crea una plantilla de los métodos para obligar a la clase que la herede tenga que implementar todas las instrucciones de la interfaz.
+<p align="justify">8. A continuación se definirán los métodos en la interfaz "IEmpleadoService" en la rama "service_interface_branch". 
+En esta interfaz se define la estructura de los métodos de acceso a datos CRUD, se crea una plantilla de los métodos para obligar a la clase que la herede tenga que implementar todas las instrucciones de la interfaz.</p>
 
 Se pueden observar 6 métodos:
 
@@ -151,41 +158,54 @@ Se pueden observar 6 métodos:
 	- Método listarEmpleadoNombre(): su función es generar una lista de Empleados buscando 	por nombre. Recibe como parámetro un nombre de tipo String.
 	- Método actualizarEmpleado(): su función es actualizar los registros de un empleado. Recibe 	como parámetro un empleado del tipo Empleado.
  
- ![image](https://user-images.githubusercontent.com/103035621/168126694-ede5c980-6a5e-4e33-a2ad-aefc2f222e72.png)
+ <p align="center">
+  <img src="https://user-images.githubusercontent.com/103035621/168126694-ede5c980-6a5e-4e33-a2ad-aefc2f222e72.png" alt="Imagen2"/>
+</p>
+ 
+<p align="justify">9. Lo siguiente será implementar los métodos de la interfaz en la clase "EmpleadoServiceImpl" en la rama "service_class_branch". 
+Para realizar esto se deberá implementar la interfaz "IEmpleadoService" en la cabecera de la clase, una vez implementada aparecerá un warning indicando que se deben implementar los métodos de la interfaz. Se implementan todos los métodos y se rellena el cuerpo añadiendo las funcionalidades deseadas.</p>
 
-9. Lo siguiente será implementar los métodos de la interfaz en la clase "EmpleadoServiceImpl" en la rama "service_class_branch". 
-Para realizar esto se deberá implementar la interfaz "IEmpleadoService" en la cabecera de la clase, una vez implementada aparecerá un warning indicando que se deben implementar los métodos de la interfaz. Se implementan todos los métodos y se rellena el cuerpo añadiendo las funcionalidades deseadas.
-
-![image](https://user-images.githubusercontent.com/103035621/168126911-ee4a4bb4-7a9e-4791-b69e-70427aead409.png)
+ <p align="center">
+  <img src="https://user-images.githubusercontent.com/103035621/168126911-ee4a4bb4-7a9e-4791-b69e-70427aead409.png" alt="Imagen2"/>
+</p>
 
 Una vez rellenado el cuerpo de los métodos implementados es recomendable escribir un comentario con una breve explicación de funcionamiento.
  
-10. El siguiente paso será crear el controlador de Empleados, para ello se crea el package controller y la clase "EmpleadoController.Java". Lo correcto sería trabajar en la rama correspondiente, en este caso he trabajado en la misma rama. Primero de todo se crean las anotaciones @RestController y @RequestMapping("/api). La primera permite que los controladores Spring sean más cortos, permiten que una clase sea reconocida como un componente administrado por Spring y permitir el manejo de solicitudes HTTP usando API Rest.
+<p align="justify">10. El siguiente paso será crear el controlador de Empleados, para ello se crea el package controller y la clase "EmpleadoController.Java". Lo correcto sería trabajar en la rama correspondiente, en este caso he trabajado en la misma rama. Primero de todo se crean las anotaciones @RestController y @RequestMapping("/api). La primera permite que los controladores Spring sean más cortos, permiten que una clase sea reconocida como un componente administrado por Spring y permitir el manejo de solicitudes HTTP usando API Rest.</p>
 
-La segunda anotación (@RequestMapping) permite mapear solicitudes HTTP con métodos de tal forma que se puedan ejecutar los métodos de los controladores MVC y Rest. 
-En la siguiente imagen se pueden visualizar ambas anotaciones y la creación de la instancia de la clase "EmpleadoServiceImpl" para utilizar sus métodos a lo largo del controlador.
+<p align="justify">La segunda anotación (@RequestMapping) permite mapear solicitudes HTTP con métodos de tal forma que se puedan ejecutar los métodos de los controladores MVC y Rest. En la siguiente imagen se pueden visualizar ambas anotaciones y la creación de la instancia de la clase "EmpleadoServiceImpl" para utilizar sus métodos a lo largo del controlador. </p>
 
-![image](https://user-images.githubusercontent.com/103035621/168127078-0fdc8496-1a16-47ff-ab91-2f0b939478b4.png)
+ <p align="center">
+  <img src="https://user-images.githubusercontent.com/103035621/168127078-0fdc8496-1a16-47ff-ab91-2f0b939478b4.png" alt="Imagen2"/>
+</p>
 
 A continuación, se mapean los siguientes métodos:
 
 - Método listarEmpleados() con la ruta GET localhost:puerto/api/empleados.
 
-![image](https://user-images.githubusercontent.com/103035621/168127132-e59094e1-9eca-4b0a-94d1-9b6f98fd62a6.png)
+ <p align="center">
+  <img src="https://user-images.githubusercontent.com/103035621/168127132-e59094e1-9eca-4b0a-94d1-9b6f98fd62a6.png" alt="Imagen2"/>
+</p>
 
 - Método listarEmpleadoNombre() con la ruta GET localhost:puerto/api/empleados/nombre/{nombre} donde {nombre} será el nombre a filtrar.
 
-![image](https://user-images.githubusercontent.com/103035621/168127176-d625f97e-d4ed-4bfc-93c0-137f106c87b9.png)
+ <p align="center">
+  <img src="https://user-images.githubusercontent.com/103035621/168127176-d625f97e-d4ed-4bfc-93c0-137f106c87b9.png" alt="Imagen2"/>
+</p>
 
 - Método guardarEmpleado() con la ruta POST localhost:puerto/empleados se podrá introducir un empleado en el body de la petición y guardarlo en la base de datos.
 
-![image](https://user-images.githubusercontent.com/103035621/168127241-2c74bd9e-85ab-4fa8-af04-d1d57036d573.png)
+ <p align="center">
+  <img src="https://user-images.githubusercontent.com/103035621/168127241-2c74bd9e-85ab-4fa8-af04-d1d57036d573.png" alt="Imagen2"/>
+</p>
 
-- Método buscarEmpleadoId() con la ruta GET localhost:puerto/empleado/{id} se obtendrá como resultado la búsqueda de un empleado mediante el identificador de este, solo hay que sustituir {id} por una identificación en la dirección de la API.
+<p align="justify">- Método buscarEmpleadoId() con la ruta GET localhost:puerto/empleado/{id} se obtendrá como resultado la búsqueda de un empleado mediante el identificador de este, solo hay que sustituir {id} por una identificación en la dirección de la API.</p>
 
-![image](https://user-images.githubusercontent.com/103035621/168127643-a7484723-c19c-46d5-8b13-96283d830c91.png)
+ <p align="center">
+  <img src="https://user-images.githubusercontent.com/103035621/168127643-a7484723-c19c-46d5-8b13-96283d830c91.png" alt="Imagen2"/>
+</p>
 
-- Método eliminarEmpleado() con la ruta DELETE localhost/empleado/{id} se eliminará un empleado de la base de datos, para ello hay que substituir el {id} por un identificador de empleado.
+<p align="justify">- Método eliminarEmpleado() con la ruta DELETE localhost/empleado/{id} se eliminará un empleado de la base de datos, para ello hay que substituir el {id} por un identificador de empleado.</p>
 
 ![image](https://user-images.githubusercontent.com/103035621/168127690-a9937355-a61c-47f2-b5f7-4c6f90c95d6b.png)
 
