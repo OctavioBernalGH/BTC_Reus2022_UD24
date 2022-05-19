@@ -5,13 +5,20 @@ import java.util.List;
 import com.crud.spring.dto.Empleado;
 
 public interface IEmpleadoService {
-	// Metodos CRUD
-	public List <Empleado> listarEmpleados(); // Listar todo	
-	public Empleado guardarEmpleado(Empleado empleado); // Create
-	public Empleado buscarEmpleadoId(Long id); // Read
-	public List<Empleado> listarEmpleadoNombre(String nombre); // listar empleados por nombre
-	public Empleado buscarEmpleadoTrabajo(String trabajo);
-	public Empleado actualizarEmpleado(Empleado empleado); // update
-	public void eliminarEmpleado(Long id); // delete
+	
+	/** Listar todos los empleados */
+	public List <Empleado> listarEmpleados(); 	
+	/** Guardar/Crear un nuevo empleado */
+	public Empleado guardarEmpleado(Empleado empleado); 
+	/** Buscar empleado por ID */
+	public Empleado buscarEmpleadoId(Long id); 
+	/** Listar clientes por trabajo */
+	public List<Empleado> listarEmpleadoTrabajo(String trabajo);
+	/** Listar empleados por nombre */
+	public List<Empleado> listarEmpleadoNombre(String nombre);
+	/** Eliminar empleados por ID */
+	public void eliminarEmpleado(Long id);
+	/** Modificar un empleado */
+	public Empleado modificarEmpleado(Empleado empleado);
 	
 }

@@ -31,7 +31,7 @@ public class EmpleadoServiceImpl implements IEmpleadoService{
 	}
 	
 	@Override
-	public Empleado buscarEmpleadoTrabajo(String trabajo) {
+	public List <Empleado> listarEmpleadoTrabajo(String trabajo) {
 		// Devuelve un empleado buscando por trabajo.
 		return iEmpleadoDAO.findByTrabajo(trabajo);
 	}
@@ -43,7 +43,7 @@ public class EmpleadoServiceImpl implements IEmpleadoService{
 	}
 
 	@Override
-	public Empleado actualizarEmpleado(Empleado empleado) {
+	public Empleado modificarEmpleado(Empleado empleado) {
 		// Actualiza un empleado.
 		return iEmpleadoDAO.save(empleado);
 	}

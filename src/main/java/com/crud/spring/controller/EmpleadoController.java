@@ -88,7 +88,7 @@ public class EmpleadoController {
 	 * @return
 	 */
 	@PutMapping("/empleado/{id}")
-	public Empleado actualizarEmpleado(@PathVariable(name = "id") Long id, @RequestBody Empleado empleado) {
+	public Empleado modifiEmpleado(@PathVariable(name = "id") Long id, @RequestBody Empleado empleado) {
 
 		Empleado empleado_a_actualizar = new Empleado();
 		Empleado empleado_actualizado = new Empleado();
@@ -105,15 +105,15 @@ public class EmpleadoController {
 		 * nuevos valores mediante el set.
 		 */
 		empleado_a_actualizar.setNombre(empleado.getNombre());
-		empleado_a_actualizar.setTrabajo(empleado.getTrabajo());
-		empleado_a_actualizar.setSalario(empleado.getSalario());
+		empleado_a_actualizar.setTrabajoEnum(empleado.getTrabajoEnum());
+		empleado_a_actualizar.setSalario(empleado.getTrabajoEnum().setearSueldo(empleado.getTrabajoEnum().getNombreTrabajo()));
 		empleado_a_actualizar.setDni(empleado.getDni());
 
 		/**
 		 * El empleado será actualizado cuando se ejecute la función de
 		 * actualizarEmpleado y reciba como parámetro los nuevos datos del empleado.
 		 */
-		empleado_actualizado = empleadoServiceImpl.actualizarEmpleado(empleado_a_actualizar);
+		empleado_actualizado = empleadoServiceImpl.modificarEmpleado(empleado_a_actualizar);
 
 		/**
 		 * Por último se devuelve un empleado con los nuevos datos.
@@ -144,7 +144,7 @@ public class EmpleadoController {
 	 * @return
 	 */
 	@GetMapping("/empleado/trabajo/{trabajo}")
-	public Empleado buscarEmpleadoTrabajo(@PathVariable(name = "trabajo") String trabajo) {
-		return empleadoServiceImpl.buscarEmpleadoTrabajo(trabajo);
+	public List <Empleado> listarEmpleadoTrabajo(@PathVariable(name = "trabajo") String trabajo) {
+		return empleadoServiceImpl.listarEmpleadoTrabajo(trabajo);
 	}
 }

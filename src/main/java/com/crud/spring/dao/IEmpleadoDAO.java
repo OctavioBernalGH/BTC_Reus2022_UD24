@@ -6,10 +6,10 @@ import com.crud.spring.dto.Empleado;
 
 public interface IEmpleadoDAO extends JpaRepository<Empleado, Long>{
 	
-	// Lista los empleados por nombre.
+	/** Listar empleados por nombre */
 	public List<Empleado> findByNombre(String nombre);
 	
-	// Lista los empleados por trabajo.
-	public Empleado findByTrabajo(String trabajo);
+	/** Lista empleados por trabajo */
+	public List<Empleado> findByTrabajo(String trabajo);
 
 }
